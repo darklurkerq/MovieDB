@@ -14,6 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func start() {
         window = UIWindow(frame: UIScreen.main.bounds)
         coordinator = AppCoordinator(window: window)
-        coordinator?.startLaunchScreen()
+        coordinator?.start()
     }
 }

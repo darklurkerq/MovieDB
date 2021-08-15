@@ -12,10 +12,9 @@ final class AppCoordinator {
         let rootViewController: UINavigationController = Resolver.resolve(name: Resolver.Names.rootViewController)
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
-
     }
 
-    func startLaunchScreen() {
-
+    func start() {
+        GenresCoordinator(appCoordinator: self).showGenres()
     }
 }
