@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  MovieDB
-//
-//  Created by Kecskés Péter on 2021. 08. 15..
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

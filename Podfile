@@ -6,5 +6,5 @@ target 'MovieDB' do
   use_frameworks!
 
   # Pods for MovieDB
-  pod 'TMDBSwift'
+    pod 'TMDBSwift'
 end
