@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A7E1001D26C94FBA00840DFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1001C26C94FBA00840DFB /* AppDelegate.swift */; };
-		A7E1001F26C94FBA00840DFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1001E26C94FBA00840DFB /* SceneDelegate.swift */; };
-		A7E1002126C94FBA00840DFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1002026C94FBA00840DFB /* ViewController.swift */; };
+		A7E1002126C94FBA00840DFB /* GenresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1002026C94FBA00840DFB /* GenresViewController.swift */; };
 		A7E1002626C94FBE00840DFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7E1002526C94FBE00840DFB /* Assets.xcassets */; };
 		A7E1002926C94FBE00840DFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7E1002726C94FBE00840DFB /* LaunchScreen.storyboard */; };
-		A7E1003926C9511800840DFB /* MovieResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1003826C9511800840DFB /* MovieResource.swift */; };
+		A7E1003926C9511800840DFB /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1003826C9511800840DFB /* MovieService.swift */; };
 		A7E1004B26C9562800840DFB /* AppDelegate+Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1004A26C9562800840DFB /* AppDelegate+Registration.swift */; };
 		A7E1004E26C9582F00840DFB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1004D26C9582F00840DFB /* AppCoordinator.swift */; };
 		A7E1005B26C95BB800840DFB /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1005A26C95BB800840DFB /* Resolver.swift */; };
@@ -24,12 +23,11 @@
 		6B3F78C3708F300800478284 /* Pods_MovieDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E1001926C94FBA00840DFB /* MovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E1001C26C94FBA00840DFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A7E1001E26C94FBA00840DFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A7E1002026C94FBA00840DFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A7E1002026C94FBA00840DFB /* GenresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresViewController.swift; sourceTree = "<group>"; };
 		A7E1002526C94FBE00840DFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7E1002826C94FBE00840DFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7E1002A26C94FBE00840DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7E1003826C9511800840DFB /* MovieResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResource.swift; sourceTree = "<group>"; };
+		A7E1003826C9511800840DFB /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 		A7E1004A26C9562800840DFB /* AppDelegate+Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Registration.swift"; sourceTree = "<group>"; };
 		A7E1004D26C9582F00840DFB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A7E1005A26C95BB800840DFB /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
@@ -91,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				A7E1004526C9522E00840DFB /* Model */,
-				A7E1003826C9511800840DFB /* MovieResource.swift */,
+				A7E1003826C9511800840DFB /* MovieService.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -107,7 +105,7 @@
 		A7E1004126C9517800840DFB /* Genres */ = {
 			isa = PBXGroup;
 			children = (
-				A7E1002026C94FBA00840DFB /* ViewController.swift */,
+				A7E1002026C94FBA00840DFB /* GenresViewController.swift */,
 			);
 			path = Genres;
 			sourceTree = "<group>";
@@ -125,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				A7E1001C26C94FBA00840DFB /* AppDelegate.swift */,
-				A7E1001E26C94FBA00840DFB /* SceneDelegate.swift */,
 				A7E1004A26C9562800840DFB /* AppDelegate+Registration.swift */,
 				A7E1004D26C9582F00840DFB /* AppCoordinator.swift */,
 				A7E1005A26C95BB800840DFB /* Resolver.swift */,
@@ -157,6 +154,7 @@
 			buildPhases = (
 				797500FC7ABE38D6780D5739 /* [CP] Check Pods Manifest.lock */,
 				A7E1001526C94FBA00840DFB /* Sources */,
+				A7E1008E26C95FE300840DFB /* SwiftLint */,
 				A7E1001626C94FBA00840DFB /* Frameworks */,
 				A7E1001726C94FBA00840DFB /* Resources */,
 				152266F2580808AAF26BB3FB /* [CP] Embed Pods Frameworks */,
@@ -254,6 +252,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A7E1008E26C95FE300840DFB /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -262,12 +278,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7E1004E26C9582F00840DFB /* AppCoordinator.swift in Sources */,
-				A7E1002126C94FBA00840DFB /* ViewController.swift in Sources */,
+				A7E1002126C94FBA00840DFB /* GenresViewController.swift in Sources */,
 				A7E1004B26C9562800840DFB /* AppDelegate+Registration.swift in Sources */,
 				A7E1001D26C94FBA00840DFB /* AppDelegate.swift in Sources */,
-				A7E1003926C9511800840DFB /* MovieResource.swift in Sources */,
+				A7E1003926C9511800840DFB /* MovieService.swift in Sources */,
 				A7E1005B26C95BB800840DFB /* Resolver.swift in Sources */,
-				A7E1001F26C94FBA00840DFB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,6 @@ extension Resolver {
 
 extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
-        register(name: Resolver.Names.rootViewController ) { UINavigationController }.scope(application)
+        register(name: Resolver.Names.rootViewController ) { UINavigationController() }.scope(application)
     }
 }

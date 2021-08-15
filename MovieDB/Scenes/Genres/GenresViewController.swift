@@ -6,4 +6,3 @@ class GenresViewController: UIViewController {
         super.viewDidLoad()
     }
 }
-

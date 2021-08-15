@@ -5,7 +5,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var coordinator: AppCoordinator?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         start()
         return true
     }
@@ -16,4 +17,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         coordinator?.startLaunchScreen()
     }
 }
-
