@@ -1,10 +1,8 @@
 import UIKit
 
-typealias GenreName = String
-
 protocol GenresView: Toastable {
     var presenter: GenresPresenterInput { get set }
-    func configureView(genres: [GenreName])
+    func configureView(genres: [GenreViewModel])
 }
 
 class GenresViewController: UIViewController {
@@ -12,7 +10,7 @@ class GenresViewController: UIViewController {
 
     @Injected
     var presenter: GenresPresenterInput
-    private var datasource = [GenreName]()
+    private var datasource = [GenreViewModel]()
 
     private let tableView = UITableView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -33,7 +31,7 @@ class GenresViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
 
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .systemBackground
         createLayout()
     }
 
@@ -50,7 +48,7 @@ class GenresViewController: UIViewController {
 }
 
 extension GenresViewController: GenresView {
-    func configureView(genres: [GenreName]) {
+    func configureView(genres: [GenreViewModel]) {
         datasource = genres
         tableView.reloadData()
     }
@@ -70,4 +68,7 @@ extension GenresViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.selectedGenre(datasource[indexPath.row])
+    }
 }

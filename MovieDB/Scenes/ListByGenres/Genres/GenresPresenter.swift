@@ -4,6 +4,7 @@ protocol GenresPresenterInput: AnyObject {
     var coordinator: ListByGenresCoordinatorProtocol? { get set }
     var view: GenresView? { get set }
     func loadGenres()
+    func selectedGenre(_ genre: GenreViewModel)
 }
 
 final class GenresPresenter {
@@ -15,15 +16,25 @@ final class GenresPresenter {
 }
 
 extension GenresPresenter: GenresPresenterInput {
+
     func loadGenres() {
         service.loadGenres { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let data):
-                self.view?.configureView(genres: data.compactMap({ $0.name }))
+                self.view?.configureView(genres: data.compactMap({
+                    guard let genreID = $0.id, let genreTitle = $0.name else {
+                        return nil
+                    }
+                    return GenreViewModel(identifier: genreID, title: genreTitle)
+                }))
             case .failure(let err):
                 print(err)
             }
         }
+    }
+
+    func selectedGenre(_ genre: GenreViewModel) {
+        coordinator?.showDiscoverMoviesFor(genre: String(genre.identifier))
     }
 }

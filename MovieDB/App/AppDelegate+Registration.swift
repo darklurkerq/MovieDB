@@ -21,5 +21,10 @@ extension Resolver {
         register { GenresViewController() }.resolveProperties { _, controller in
             controller.presenter.view = controller
         }
+
+        register { DiscoverMoviesPresenter() }.implements(DiscoverMoviesPresenterInput.self)
+        register { DiscoverMoviesViewController() }.resolveProperties { _, controller in
+            controller.presenter.view = controller
+        }
     }
 }

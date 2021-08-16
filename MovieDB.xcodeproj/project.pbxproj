@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A77A7C9826CAC7430031FFF5 /* DiscoverMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77A7C9726CAC7430031FFF5 /* DiscoverMoviesViewController.swift */; };
+		A77A7C9B26CAC74F0031FFF5 /* DiscoverMoviesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77A7C9A26CAC74F0031FFF5 /* DiscoverMoviesPresenter.swift */; };
 		A7ACFDA726CABB7500253917 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACFDA626CABB7500253917 /* Then.swift */; };
 		A7ACFDAA26CAC0CB00253917 /* GenreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACFDA926CAC0CB00253917 /* GenreTableViewCell.swift */; };
 		A7E1001D26C94FBA00840DFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1001C26C94FBA00840DFB /* AppDelegate.swift */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		432C69462E1DD803027B0F97 /* Pods-MovieDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieDB.debug.xcconfig"; path = "Target Support Files/Pods-MovieDB/Pods-MovieDB.debug.xcconfig"; sourceTree = "<group>"; };
 		6B3F78C3708F300800478284 /* Pods_MovieDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A77A7C9726CAC7430031FFF5 /* DiscoverMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMoviesViewController.swift; sourceTree = "<group>"; };
+		A77A7C9A26CAC74F0031FFF5 /* DiscoverMoviesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMoviesPresenter.swift; sourceTree = "<group>"; };
 		A7ACFDA626CABB7500253917 /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		A7ACFDA926CAC0CB00253917 /* GenreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTableViewCell.swift; sourceTree = "<group>"; };
 		A7E1001926C94FBA00840DFB /* MovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +67,25 @@
 				FB16A179F6BD9755E900FDB0 /* Pods-MovieDB.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A7ACFDB126CAC4BC00253917 /* Genres */ = {
+			isa = PBXGroup;
+			children = (
+				A7E1002026C94FBA00840DFB /* GenresViewController.swift */,
+				A7E1009426C967A100840DFB /* GenresPresenter.swift */,
+				A7ACFDA926CAC0CB00253917 /* GenreTableViewCell.swift */,
+			);
+			path = Genres;
+			sourceTree = "<group>";
+		};
+		A7ACFDB426CAC4D300253917 /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				A77A7C9726CAC7430031FFF5 /* DiscoverMoviesViewController.swift */,
+				A77A7C9A26CAC74F0031FFF5 /* DiscoverMoviesPresenter.swift */,
+			);
+			path = Movies;
 			sourceTree = "<group>";
 		};
 		A7E1001026C94FBA00840DFB = {
@@ -115,10 +138,9 @@
 		A7E1004126C9517800840DFB /* ListByGenres */ = {
 			isa = PBXGroup;
 			children = (
-				A7E1002026C94FBA00840DFB /* GenresViewController.swift */,
-				A7E1009426C967A100840DFB /* GenresPresenter.swift */,
+				A7ACFDB426CAC4D300253917 /* Movies */,
+				A7ACFDB126CAC4BC00253917 /* Genres */,
 				A7E1009826C9695500840DFB /* ListByGenresCoordinator.swift */,
-				A7ACFDA926CAC0CB00253917 /* GenreTableViewCell.swift */,
 			);
 			path = ListByGenres;
 			sourceTree = "<group>";
@@ -298,10 +320,12 @@
 				A7E1009926C9695500840DFB /* ListByGenresCoordinator.swift in Sources */,
 				A7E1002126C94FBA00840DFB /* GenresViewController.swift in Sources */,
 				A7E1004B26C9562800840DFB /* AppDelegate+Registration.swift in Sources */,
+				A77A7C9B26CAC74F0031FFF5 /* DiscoverMoviesPresenter.swift in Sources */,
 				A7ACFDAA26CAC0CB00253917 /* GenreTableViewCell.swift in Sources */,
 				A7E1001D26C94FBA00840DFB /* AppDelegate.swift in Sources */,
 				A7E1003926C9511800840DFB /* MovieService.swift in Sources */,
 				A7ACFDA726CABB7500253917 /* Then.swift in Sources */,
+				A77A7C9826CAC7430031FFF5 /* DiscoverMoviesViewController.swift in Sources */,
 				A7E1005B26C95BB800840DFB /* Resolver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

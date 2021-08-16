@@ -1,6 +1,11 @@
 import UIKit
 import TinyConstraints
 
+struct GenreViewModel {
+    let identifier: Int
+    let title: String
+}
+
 class GenreTableViewCell: UITableViewCell {
 
     private let titleLabel = UILabel().then {
@@ -23,7 +28,7 @@ class GenreTableViewCell: UITableViewCell {
         titleLabel.edgesToSuperview(insets: .init(top: 12, left: 8, bottom: 12, right: 8))
     }
 
-    func configure(with title: GenreName) {
-        titleLabel.text = title
+    func configure(with genre: GenreViewModel) {
+        titleLabel.text = genre.title
     }
 }
