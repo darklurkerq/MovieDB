@@ -8,4 +8,5 @@ target 'MovieDB' do
   # Pods for MovieDB
     pod 'TMDBSwift'
     pod 'SwiftLint'
+    pod 'TinyConstraints'
 end

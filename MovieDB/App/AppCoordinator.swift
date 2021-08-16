@@ -15,6 +15,6 @@ final class AppCoordinator {
     }
 
     func start() {
-        GenresCoordinator(appCoordinator: self).showGenres()
+        ListByGenresCoordinator(appCoordinator: self).showGenres()
     }
 }

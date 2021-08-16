@@ -10,6 +10,7 @@ extension Resolver {
 extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
         register(name: Resolver.Names.rootViewController ) { UINavigationController() }.scope(application)
+        register { MovieService() }.implements(MovieServiceProtocol.self).scope(application)
         registerGenreServices()
     }
 }
@@ -17,8 +18,8 @@ extension Resolver: ResolverRegistering {
 extension Resolver {
     public static func registerGenreServices() {
         register { GenresPresenter() }.implements(GenresPresenterInput.self)
-        register { GenresViewController() }.resolveProperties { _, vc in
-            vc.presenter.view = vc
+        register { GenresViewController() }.resolveProperties { _, controller in
+            controller.presenter.view = controller
         }
     }
 }

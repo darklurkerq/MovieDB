@@ -1,11 +1,11 @@
 import Foundation
 import UIKit
 
-protocol GenresCoordinatorProtocol {
+protocol ListByGenresCoordinatorProtocol {
     func showGenres()
 }
 
-final class GenresCoordinator {
+final class ListByGenresCoordinator {
     @Injected(name: Resolver.Names.rootViewController)
     private var rootNavigationController: UINavigationController
 
@@ -16,10 +16,10 @@ final class GenresCoordinator {
     }
 }
 
-extension GenresCoordinator: GenresCoordinatorProtocol {
+extension ListByGenresCoordinator: ListByGenresCoordinatorProtocol {
     func showGenres() {
         let genresViewController: GenresViewController = Resolver.resolve()
-        //genresViewController.presenter.coordinator = self
+        genresViewController.presenter.coordinator = self
         rootNavigationController.viewControllers = [genresViewController]
     }
 }

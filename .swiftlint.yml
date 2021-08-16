@@ -1,3 +1,5 @@
 excluded:
   - Carthage
   - Pods
+
+line_length: 150
