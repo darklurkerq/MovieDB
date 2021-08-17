@@ -1,7 +1,7 @@
 import UIKit
 import TinyConstraints
 
-struct GenreViewModel {
+struct GenreViewModel: Codable {
     let identifier: Int
     let title: String
 }
@@ -25,7 +25,7 @@ class GenreTableViewCell: UITableViewCell {
 
     private func createLayout() {
         addSubview(titleLabel)
-        titleLabel.edgesToSuperview(insets: .init(top: 12, left: 8, bottom: 12, right: 8))
+        titleLabel.edgesToSuperview(insets: .init(top: 12, left: 16, bottom: 12, right: 16))
     }
 
     func configure(with genre: GenreViewModel) {

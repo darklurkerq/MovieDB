@@ -2,7 +2,7 @@ import UIKit
 
 protocol DiscoverMoviesView: ErrorHandlingView {
     var presenter: DiscoverMoviesPresenterInput { get set }
-    func newData(data: [String])
+    func newData(data: [MovieViewModel])
 }
 
 class DiscoverMoviesViewController: UIViewController {
@@ -13,7 +13,7 @@ class DiscoverMoviesViewController: UIViewController {
 
     @Injected
     var presenter: DiscoverMoviesPresenterInput
-    var datasource = [String]()
+    var datasource = [MovieViewModel]()
     private let pageLimit = 1000
 
     private var gridLayout: UICollectionViewLayout {
@@ -82,7 +82,7 @@ extension DiscoverMoviesViewController: UICollectionViewDataSource, UICollection
             else {
                 return UICollectionViewCell()
             }
-            cell.configure(with: MovieViewModel(image: "", title: datasource[indexPath.row]))
+            cell.configure(with: MovieViewModel(image: datasource[indexPath.row].image, title: datasource[indexPath.row].title))
             return cell
         case .loading:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LoadingCollectionViewCell.defaultReuseIdentifier,
@@ -106,12 +106,12 @@ extension DiscoverMoviesViewController: UICollectionViewDataSource, UICollection
 }
 
 extension DiscoverMoviesViewController: DiscoverMoviesView {
-    func newData(data: [String]) {
+    func newData(data: [MovieViewModel]) {
         self.datasource.append(contentsOf: data)
         self.collectionView.insertItems(at: calculateIndexPathsToReload(from: data))
     }
 
-    private func calculateIndexPathsToReload(from newMovies: [String]) -> [IndexPath] {
+    private func calculateIndexPathsToReload(from newMovies: [MovieViewModel]) -> [IndexPath] {
         let startIndex = datasource.count - newMovies.count
         let endIndex = startIndex + newMovies.count
         return (startIndex..<endIndex).map { IndexPath(item: $0, section: 0) }

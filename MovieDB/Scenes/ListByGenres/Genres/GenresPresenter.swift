@@ -11,25 +11,19 @@ final class GenresPresenter {
     var coordinator: ListByGenresCoordinatorProtocol?
     weak var view: GenresView?
     @Injected
-    var service: MovieServiceProtocol
-
+    var interactor: ListByGenresInteractorInput
 }
 
 extension GenresPresenter: GenresPresenterInput {
 
     func loadGenres() {
-        service.loadGenres { [weak self] result in
+        interactor.loadGenres { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let data):
-                self.view?.configureView(genres: data.compactMap({
-                    guard let genreID = $0.id, let genreTitle = $0.name else {
-                        return nil
-                    }
-                    return GenreViewModel(identifier: genreID, title: genreTitle)
-                }))
+                self.view?.configureView(genres: data)
             case .failure(let err):
-                print(err)
+                self.view?.handleError(error: err)
             }
         }
     }

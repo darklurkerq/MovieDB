@@ -13,6 +13,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
 
     private let titleLabel = UILabel().then {
         $0.textAlignment = .center
+        $0.numberOfLines = 0
         $0.font = .boldSystemFont(ofSize: 12)
     }
 

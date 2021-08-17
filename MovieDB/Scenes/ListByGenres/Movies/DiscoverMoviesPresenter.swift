@@ -11,9 +11,8 @@ final class DiscoverMoviesPresenter {
     var coordinator: ListByGenresCoordinatorProtocol?
     weak var view: DiscoverMoviesView?
     @Injected
-    var service: MovieServiceProtocol
+    var interactor: ListByGenresInteractorInput
     var genre: String!
-    var movies = [String]()
     private var isLoading = false
     private var currentPage = 0
 }
@@ -22,11 +21,10 @@ extension DiscoverMoviesPresenter: DiscoverMoviesPresenterInput {
     func loadMovies() {
         currentPage += 1
         isLoading = true
-        service.loadMovies(genre: genre, page: currentPage) { result in
+        interactor.loadMovies(genre: genre, page: currentPage) { result in
             switch result {
             case .success(let data):
-                self.movies = data.compactMap({ $0.title })
-                self.view?.newData(data: self.movies)
+                self.view?.newData(data: data)
             case .failure(let err):
                 print(err)
             }

@@ -17,6 +17,8 @@ extension Resolver: ResolverRegistering {
 
 extension Resolver {
     public static func registerGenreServices() {
+        register { ListByGenresInteractor() }.implements(ListByGenresInteractorInput.self)
+
         register { GenresPresenter() }.implements(GenresPresenterInput.self)
         register { GenresViewController() }.resolveProperties { _, controller in
             controller.presenter.view = controller
