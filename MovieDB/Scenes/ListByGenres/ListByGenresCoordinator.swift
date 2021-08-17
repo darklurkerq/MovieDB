@@ -27,6 +27,7 @@ extension ListByGenresCoordinator: ListByGenresCoordinatorProtocol {
     func showDiscoverMoviesFor(genre: String) {
         let moviesViewController: DiscoverMoviesViewController = Resolver.resolve()
         moviesViewController.presenter.coordinator = self
+        moviesViewController.presenter.genre = genre
         rootNavigationController.pushViewController(moviesViewController, animated: true)
     }
 }
